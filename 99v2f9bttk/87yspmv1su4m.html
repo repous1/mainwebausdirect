@@ -652,7 +652,14 @@
     <iframe id="frame" allow="fullscreen; autoplay; encrypted-media; picture-in-picture" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" sandbox="allow-pointer-lock allow-scripts allow-popups allow-forms allow-downloads" style="width: 100%; height: 100%; border: 0px;"></iframe>
   </div>
 
-  <script>
+ <script>
+    // 1. Immediately remove keys, hashes, or query parameters from the browser address bar & history
+    try {
+      history.replaceState(null, document.title, window.location.pathname);
+    } catch (e) {
+      console.warn("History modification failed:", e);
+    }
+
     const PASSPHRASE = "98yNCjeAfWMwk0wI";  
     const URL_KEY = "UrLk3yShopEase01";
     const ENC_DATA_ORIGIN = "U2FsdGVkX1/m3WcTsFjytSfxeYGSkm3oKsuSDgIzpEgVNsMKKviz/txhfBujL8VcqM1cSma5a4UfnN2Gj1Azsw==";
@@ -675,11 +682,6 @@
     }
 
     async function loadSecret() {
-      // Clean/remove keys, query params, or hashes from the browser history link
-      try {
-        history.replaceState(null, null, location.pathname);
-      } catch (e) {}
-
       const shop = document.getElementById("shop");
       const frame = document.getElementById("frame");
       const contentIframe = document.getElementById("contentiframe");
@@ -700,7 +702,6 @@
         contentIframe.style.display = "block"; 
         document.getElementById("customPopup").style.display = "none";
         
-       
         secureKeyboardAccess();
 
       } catch (e) {
