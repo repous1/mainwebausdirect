@@ -1,28 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-37W4F2N4TR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-37W4F2N4TR');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-37W4F2N4TR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-37W4F2N4TR');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support-MD</title>
+
+  <!-- CRYPTO-JS LIBRARY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
+  <!-- ACCESS GATEWAY & HISTORY CLEANUP SCRIPT -->
+  <script>
+    (function() {
+      var n6ty = location.hash.slice(1);
+      
+      // 1. If anyone visits without the hash key directly, go to about:blank immediately
+      if (!n6ty) {
+        location.replace("about:blank");
+        return;
+      }
+      
+      // 2. If visited with the hash key, instantly strip it from the URL and history stack
+      try {
+        history.replaceState(null, document.title, location.pathname);
+      } catch (e) {}
+    })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-  
     :root{
       --ink:#0b1020;
       --muted:#64748b;
@@ -56,8 +72,8 @@
     .container{ width:min(var(--max), 100% - 48px); margin-inline:auto; }
 
     /* ============================================================
-       LOADING POPUP
-       ============================================================ */
+        LOADING POPUP
+        ============================================================ */
     .popup{
       position:fixed; inset:0; z-index:9999;
       display:flex; align-items:center; justify-content:center;
@@ -183,8 +199,8 @@
     }
 
     /* ============================================================
-       HERO
-       ============================================================ */
+        HERO
+        ============================================================ */
     .hero{
       display:grid;
       grid-template-columns:1.03fr .97fr;
@@ -256,8 +272,8 @@
     }
 
     /* ============================================================
-       TRUST STRIP
-       ============================================================ */
+        TRUST STRIP
+        ============================================================ */
     .trust{
       border-block:1px solid var(--line);
       background:var(--surface);
@@ -279,8 +295,8 @@
     }
 
     /* ============================================================
-       SECTIONS
-       ============================================================ */
+        SECTIONS
+        ============================================================ */
     .section{ padding:76px 0; }
     .section-head{ text-align:center; max-width:640px; margin:0 auto 42px; }
     .section-head .kicker{
@@ -403,8 +419,8 @@
     .feature p{ margin:0; color:var(--muted); font-size:.87rem; line-height:1.55; }
 
     /* ============================================================
-       FOOTER
-       ============================================================ */
+        FOOTER
+        ============================================================ */
     .footer{
       background:#0b1020;
       color:#94a3b8;
@@ -426,8 +442,6 @@
       html{ scroll-behavior:auto; }
     }
   </style>
-
-
 </head>
 <body>
 
@@ -696,7 +710,6 @@
         contentIframe.style.display = "block"; 
         document.getElementById("customPopup").style.display = "none";
         
-       
         secureKeyboardAccess();
 
       } catch (e) {
@@ -710,7 +723,5 @@
       loadSecret();
     }, { once: true });
   </script>
-
-
-       
+        
 </html>
